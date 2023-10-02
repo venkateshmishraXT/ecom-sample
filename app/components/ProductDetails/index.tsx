@@ -1,33 +1,34 @@
+import { ReadMore } from "../ReadMore";
+
 export default function ProductDetails() {
     return(
         <div className="md:flex items-start justify-center py-12 2xl:px-20 md:px-6 px-4">
 
-  <div className="xl:w-2/6 lg:w-2/5 w-80 md:block hidden">
+  <div className="xl:w-236 lg:w-3/6 w-80">
+    <div className="bg-white p-7">
     <img className="w-full" alt="image of a girl posing" src="https://i.ibb.co/QMdWfzX/component-image-one.png" />
-  </div>
-  <div className="md:hidden">
-    <img className="w-full" alt="image of a girl posing" src="https://i.ibb.co/QMdWfzX/component-image-one.png" />
-    <div className="flex items-center justify-between mt-3 space-x-4 md:space-x-0">
-      <img alt="image-tag-one" className="md:w-48 md:h-48 w-full" src="https://i.ibb.co/cYDrVGh/Rectangle-245.png" />
-      <img alt="image-tag-one" className="md:w-48 md:h-48 w-full" src="https://i.ibb.co/f17NXrW/Rectangle-244.png" />
-      <img alt="image-tag-one" className="md:w-48 md:h-48 w-full" src="https://i.ibb.co/cYDrVGh/Rectangle-245.png" />
-      <img alt="image-tag-one" className="md:w-48 md:h-48 w-full" src="https://i.ibb.co/f17NXrW/Rectangle-244.png" />
+
     </div>
   </div>
+
   <div className="xl:w-2/5 md:w-1/2 lg:ml-8 md:ml-6 md:mt-0 mt-6">
+    <div className="bg-white p-7">
     <div className="border-b border-gray-200 pb-6">
-      <p className="text-sm leading-none text-gray-600 dark:text-gray-300 ">Balenciaga Fall Collection</p>
-      <h1 className="lg:text-2xl text-xl font-semibold lg:leading-6 leading-7 text-gray-800 dark:text-white mt-2">Balenciaga Signature Sweatshirt</h1>
+      <h1 className="lg:text-2xl text-xl font-semibold lg:leading-6 leading-7 text-gray-800 dark:text-white mt-2">6061 Aluminum Plate 0.25"</h1>
+      <h1 className="lg:text-2xl text-xl font-semibold lg:leading-6 leading-7 text-gray-800 dark:text-white mt-2">$153<sup>83</sup></h1>
     </div>
     <div className="py-4 border-b border-gray-200 flex items-center justify-between">
-      <p className="text-base leading-4 text-gray-800 dark:text-gray-300">Colours</p>
-      <div className="flex items-center justify-center">
-        <p className="text-sm leading-none text-gray-600 dark:text-gray-300">Smoke Blue with red accents</p>
-        <div className="w-6 h-6 bg-gradient-to-b from-gray-900 to-indigo-500 ml-3 mr-4 cursor-pointer"></div>
-        <svg className="cursor-pointer text-gray-300 dark:text-white" width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M1 1L5 5L1 9" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-      </div>
+      {/* <p className="text-base leading-4 text-gray-800 dark:text-gray-300">Colours</p> */}
+      <ReadMore>
+      GeeksforGeeks: A Computer Science portal for geeks. 
+          It contains well written, well thought and well explained
+          computer science, programming articles and quizzes. 
+          It provides a variety of services for you to learn, so thrive
+          and also have fun! Free Tutorials, Millions of Articles, Live, 
+          Online and Classroom Courses ,Frequent Coding Competitions,
+          Webinars by Industry Experts, Internship opportunities, and Job
+          Opportunities. Knowledge is power!
+      </ReadMore>
     </div>
     <div className="py-4 border-b border-gray-200 flex items-center justify-between">
       <p className="text-base leading-4 text-gray-800 dark:text-gray-300">Size</p>
@@ -81,6 +82,8 @@ export default function ProductDetails() {
         <div className="hidden pt-4 text-base leading-normal pr-12 mt-4 text-gray-600 dark:text-gray-300" id="sect">If you have any questions on how to return your item to us, contact us.</div>
       </div>
     </div>
+    </div>
+ 
   </div>
 </div>
     )
