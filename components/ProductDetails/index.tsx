@@ -8,10 +8,12 @@ import { Spinner } from "../Skeleton";
 export default function ProductDetails({id=61012050}) {
   const [data,setData] = useState<any>();
   const [spinner,setSpinner] = useState<any>(true);
-  const [totalPrice,setTotalProce] = useState(0)
+  const [totalPrice,setTotalPrice] = useState<any>(0)
   const sendProductCountData = (productCount:any) => {
     console.log(productCount)
-    setTotalProce(productCount*data.price)
+    const price = productCount*data.price;
+    let parseValue = parseFloat(''+price).toFixed(2)
+    setTotalPrice(parseValue)
   }
   useEffect(() => {
     fetch('../data/product.json')
@@ -20,7 +22,8 @@ export default function ProductDetails({id=61012050}) {
     let result = json.filter((el:any) => el.id == id);
     setSpinner(false);
     setData(result[0])
-    setTotalProce(result[0].price)
+    let parseValue = parseFloat(''+result[0].price).toFixed(2)
+    setTotalPrice(parseValue)
    }
     )
   },[id])
