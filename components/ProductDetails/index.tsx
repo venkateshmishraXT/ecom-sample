@@ -8,6 +8,11 @@ import { Spinner } from "../Skeleton";
 export default function ProductDetails({id=61012050}) {
   const [data,setData] = useState<any>();
   const [spinner,setSpinner] = useState<any>(true);
+  const [totalPrice,setTotalProce] = useState(0)
+  const sendProductCountData = (productCount:any) => {
+    console.log(productCount)
+    setTotalProce(productCount*data.price)
+  }
   useEffect(() => {
     fetch('../data/product.json')
    .then(response => response.json())
@@ -15,6 +20,7 @@ export default function ProductDetails({id=61012050}) {
     let result = json.filter((el:any) => el.id == id);
     setSpinner(false);
     setData(result[0])
+    setTotalProce(result[0].price)
    }
     )
   },[id])
@@ -47,16 +53,13 @@ export default function ProductDetails({id=61012050}) {
           </div>
         </div>
       </div>
-
-
       <div className="xl:w-2/5 md:w-1/2 lg:ml-8 md:ml-6 md:mt-0 mt-6">
         <div className="bg-white p-7">
           <div className="border-b border-gray-200 pb-6">
             <h1 className="lg:text-2xl text-xl font-semibold lg:leading-6 leading-7 text-gray-800 dark:text-white mt-2">{data?.name}"</h1>
-            <h1 className="lg:text-2xl text-xl font-semibold lg:leading-6 leading-7 text-gray-800 dark:text-white mt-2">$153<sup>83</sup></h1>
+            <h1 className="lg:text-2xl text-xl font-semibold lg:leading-6 leading-7 text-gray-800 dark:text-white mt-2">${data.price}</h1>
           </div>
           <div className="py-4 flex items-center justify-between">
-            {/* <p className="text-base leading-4 text-gray-800 dark:text-gray-300">Colours</p> */}
             <ReadMore>
             {data?.description}
             </ReadMore>
@@ -129,8 +132,8 @@ export default function ProductDetails({id=61012050}) {
             </div>
           </div>
           <div className="flex items-center space-x-4 mt-4">
-            <p className="font-bold mt-4">$303</p>
-            <Counter />
+            <p className="font-bold mt-4">${totalPrice}</p>
+            <Counter sendProductCount={sendProductCountData} />
           </div>
           <div className="mt-4">
             <button type="button" className="text-white bg-blue hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 w-72">Add to Cart</button>
