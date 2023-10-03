@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Counter from "../Counter";
 import { ReadMore } from "../ReadMore";
 import { Spinner } from "../Skeleton";
+import { BreadCrumb } from "../BredCrumb";
 
 
 export default function ProductDetails({id=61012050}) {
@@ -35,7 +36,7 @@ export default function ProductDetails({id=61012050}) {
     404 | This page could not be found.
     </div>
 </div>}
-    { data && <div className="md:flex items-start justify-center py-12 2xl:px-20 md:px-6 px-4">
+    { data &&<> <BreadCrumb productName={data.name} /> <div className="md:flex items-start justify-center pb-12 2xl:px-20 md:px-6 px-4">
       <div className="w-6/12 ">
         <div className="xl:w-236 ">
           <div className="bg-white p-7">
@@ -69,8 +70,8 @@ export default function ProductDetails({id=61012050}) {
           </div>
           <div className="flex items-center w-10/12">
             <label htmlFor="countries" className="block mb-2 mr-3 text-sm font-medium text-black-900 dark:text-white flex items-center">Thickness(A)</label>
-            <select id="countries" className="bg-gray-50 border border-black text-black text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-              <option selected>Choose a Thickness</option>
+            <select defaultValue="0" id="countries" className="bg-gray-50 border border-black text-black text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+              <option value="0">Choose a Thickness</option>
               <option value="US">0.25</option>
               <option value="CA">0.50</option>
               <option value="FR">0.75</option>
@@ -196,7 +197,9 @@ export default function ProductDetails({id=61012050}) {
           </div>
         </div>
       </div>
-    </div>}
+    </div>
+    </>
+    }
     </>
    
   )
