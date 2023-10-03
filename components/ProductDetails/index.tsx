@@ -5,24 +5,31 @@ import { ReadMore } from "../ReadMore";
 import { Spinner } from "../Skeleton";
 
 
-export default function ProductDetails() {
+export default function ProductDetails({id=1}) {
   const [data,setData] = useState<any>();
   const [spinner,setSpinner] = useState<any>(true);
-
+  console.log(id,'asdasdsadsad')
   useEffect(() => {
     fetch('./product.json')
    .then(response => response.json())
    .then(json => {
-    let result = json.filter((el:any) => el.id === 1);
+    let result = json.filter((el:any) => el.id == id);
     setSpinner(false);
+    console.log(result,'reshsjdsahj')
     setData(result[0])
    }
     
     )
-  },[])
+  },[id])
   return (
     spinner? <Spinner /> :
-    data && <div className="md:flex items-start justify-center py-12 2xl:px-20 md:px-6 px-4">
+    <>
+    {!data && <div className="flex justify-center items-center h-screen">
+    <div className="error p-4 rounded">
+        Something went Wrong
+    </div>
+</div>}
+    { data && <div className="md:flex items-start justify-center py-12 2xl:px-20 md:px-6 px-4">
       <div className="w-6/12 ">
         <div className="xl:w-236 ">
           <div className="bg-white p-7">
@@ -182,7 +189,9 @@ export default function ProductDetails() {
           </div>
         </div>
       </div>
-    </div>
+    </div>}
+    </>
+   
   )
 
 
