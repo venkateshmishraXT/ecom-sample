@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body{
-  background: #abb3bd21;
+  background: #F6F6F6;
 }
 .copyright::after {
   content: ' | '; 

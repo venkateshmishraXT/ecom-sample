@@ -45,17 +45,17 @@ export default function Footer() {
                 </div>
 
             </div>
-            <div className="flex items-center justify-center px-6 pt-2 pb-2 text-sm bg-indigo-500">
-                <span className="copyright">
+            <div className="flex items-center justify-center px-6 pt-2 pb-2 text-sm bg-blue text-white">
+                <span className="copyright pl-2">
                     Terms & Conditions
                 </span>
-                <span className="copyright">
+                <span className="copyright pl-2">
                     &nbsp;Privacy Policy
                 </span>
-                <span className="copyright">
+                <span className="copyright pl-2">
                 &nbsp;CA Prop 65
                 </span>
-                <span className="dark:text-gray-400">
+                <span className="dark:text-gray-400 pl-2">
 
                 &nbsp;©2021 Industrial Metal Supply. All Rights Reserved.</span>
             </div>
