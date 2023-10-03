@@ -14,7 +14,7 @@ const config: Config = {
       'black': '#2F2E2E',
       'gray': '#595858',
       'light-gray': '#DDDDDD',
-      'stone': 'F6F6F6'
+      'stone': '#F6F6F6'
     },
     extend: {
       backgroundImage: {

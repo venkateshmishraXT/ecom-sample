@@ -58,7 +58,7 @@ export default function ProductDetails({id=61012050}) {
       </div>
       <div className="xl:w-2/5 md:w-1/2 lg:ml-8 md:ml-6 md:mt-0 mt-6">
         <div className="bg-white p-7">
-          <div className="border-b border-gray-200 pb-6">
+          <div className="border-b border-light-gray pb-6">
             <h1 className="lg:text-2xl text-xl font-semibold lg:leading-6 leading-7 text-gray-800 dark:text-white mt-2">{data?.name}"</h1>
             <h1 className="lg:text-2xl text-xl font-semibold lg:leading-6 leading-7 text-gray-800 dark:text-white mt-2">${data.price}</h1>
           </div>
@@ -68,8 +68,8 @@ export default function ProductDetails({id=61012050}) {
             </ReadMore>
           </div>
           <div className="flex items-center w-10/12">
-            <label htmlFor="countries" className="block mb-2 mr-3 text-sm font-medium text-gray-900 dark:text-white flex items-center">Thickness(A)</label>
-            <select id="countries" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <label htmlFor="countries" className="block mb-2 mr-3 text-sm font-medium text-black-900 dark:text-white flex items-center">Thickness(A)</label>
+            <select id="countries" className="bg-gray-50 border border-black text-black text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
               <option selected>Choose a Thickness</option>
               <option value="US">0.25</option>
               <option value="CA">0.50</option>
@@ -83,19 +83,19 @@ export default function ProductDetails({id=61012050}) {
 
             <div className="relative inline-flex items-center customInput">
               <input type="radio" id="option1" name="radio-group" className="hidden" />
-              <label htmlFor="option1" className="cursor-pointer bg-white border border-gray-300 p-2">
+              <label htmlFor="option1" className="cursor-pointer bg-white border border-gray-300 p-2 text-base">
                 48.5
               </label>
             </div>
             <div className="relative inline-flex items-center customInput">
               <input type="radio" id="option2" name="radio-group" className="hidden" />
-              <label htmlFor="option2" className="cursor-pointer bg-white border border-gray-300 p-2">
+              <label htmlFor="option2" className="cursor-pointer bg-white border border-gray-300 p-2 text-base">
                 68.5
               </label>
             </div>
             <div className="relative inline-flex items-center customInput">
               <input type="radio" id="option3" name="radio-group" className="hidden" />
-              <label htmlFor="option3" className="cursor-pointer bg-white border border-gray-300 p-2">
+              <label htmlFor="option3" className="cursor-pointer bg-white border border-gray-300 p-2 text-base">
                 Custom
               </label>
             </div>
@@ -106,42 +106,42 @@ export default function ProductDetails({id=61012050}) {
 
             <div className="relative inline-flex items-center customInput">
               <input type="radio" id="length1" name="radio-group1" className="hidden" />
-              <label htmlFor="length1" className="cursor-pointer bg-white border border-gray-300 p-2">
+              <label htmlFor="length1" className="cursor-pointer bg-white border border-gray-300 p-2 text-base">
                 144.5
               </label>
             </div>
             <div className="relative inline-flex items-center customInput">
               <input type="radio" id="length2" name="radio-group1" className="hidden" />
-              <label htmlFor="length2" className="cursor-pointer bg-white border border-gray-300 p-2">
+              <label htmlFor="length2" className="cursor-pointer bg-white border border-gray-300 p-2 text-base">
                 Custom
               </label>
             </div>
           </div>
           <div className="flex items-center space-x-4 mt-4">
-            <label className="block mb-2 mr-2-3 text-sm font-medium text-gray-900 dark:text-white flex items-center mt-2">Source</label>
+            <label className="block mb-2 mr-2-3 text-sm font-medium text-gray-900 dark:text-white flex items-center mt-2 text-base">Source</label>
 
 
             <div className="relative inline-flex items-center customInput">
-              <input type="radio" id="source1" name="radio-group1" className="hidden" />
+              <input type="radio" id="source1" name="source-group1" className="hidden" />
               <label htmlFor="source1" className="cursor-pointer bg-white border border-gray-300 p-2">
                 Domestic
               </label>
             </div>
             <div className="relative inline-flex items-center customInput">
-              <input type="radio" id="source2" name="radio-group1" className="hidden" />
+              <input type="radio" id="source2" name="source-group1" className="hidden" />
               <label htmlFor="source2" className="cursor-pointer bg-white border border-gray-300 p-2">
                 Import
               </label>
             </div>
           </div>
-          <div className="flex items-center space-x-4 mt-4">
-            <p className="font-bold mt-4">${totalPrice}</p>
+          <div className="flex items-center space-x-4 mt-4 ">
+            <p className="font-bold mt-4 w-20">${totalPrice}</p>
             <Counter sendProductCount={sendProductCountData} />
           </div>
           <div className="mt-4">
-            <button type="button" className="text-white bg-blue hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 w-72">Add to Cart</button>
+            <button type="button" className="text-white bg-light-blue hover:bg-light-blue focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-light-blue dark:hover:bg-light-blue focus:outline-none dark:focus:ring-blue-800 w-72">Add to Cart</button>
           </div>
-          <div className="flex items-center pl-4 border border-gray-200 rounded dark:border-gray-700 bg-slate-300 mt-4">
+          <div className="flex items-center pl-4 border border-light-gray rounded dark:border-gray-700 bg-slate-300 mt-4">
             <input id="bordered-radio-1" type="checkbox" value="" name="bordered-radio" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
             <label htmlFor="bordered-radio-1" className="w-full py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Schedule a recurring Order</label>
           </div>
@@ -154,34 +154,38 @@ export default function ProductDetails({id=61012050}) {
                 <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                   <div className="overflow-hidden sm:rounded-lg">
                     <table className="min-w-full">
-                      <tbody className="bg-white">
+                      <tbody className="bg-white font-light">
                         <tr>
-                          <td className="pr-6 pt-2 whitespace-nowrap border-r-2 border-gray-200">Thickness (A)</td>
-                          <td className="px-6 pt-2 text-right whitespace-nowrap">0.25</td>
+                          <td className="pr-6 pt-2 whitespace-nowrap border-r border-light-gray">Thickness (A)</td>
+                          <td className="px-6 pt-2  whitespace-nowrap">0.25</td>
                         </tr>
                         <tr>
-                          <td className="pr-6 pt-2 whitespace-nowrap border-r-2 border-gray-200">Width (B)</td>
-                          <td className="px-6 pt-2 text-right whitespace-nowrap">0.25</td>
+                          <td className="pr-6 pt-2 whitespace-nowrap border-r border-light-gray">Width (B)</td>
+                          <td className="px-6 pt-2  whitespace-nowrap">0.25</td>
                         </tr>
                         <tr>
-                          <td className="pr-6 pt-2 whitespace-nowrap border-r-2 border-gray-200">Length (C)</td>
-                          <td className="px-6 pt-2 text-right whitespace-nowrap">0.25</td>
+                          <td className="pr-6 pt-2 whitespace-nowrap border-r border-light-gray">Length (C)</td>
+                          <td className="px-6 pt-2  whitespace-nowrap">200</td>
                         </tr>
                         <tr>
-                          <td className="pr-6 pt-2 whitespace-nowrap border-r-2 border-gray-200">Weight (each)</td>
-                          <td className="px-6 pt-2 text-right whitespace-nowrap">0.25</td>
+                          <td className="pr-6 pt-2 whitespace-nowrap border-r border-light-gray">Weight (each)</td>
+                          <td className="px-6 pt-2  whitespace-nowrap">176.67 LBs</td>
                         </tr>
                         <tr>
-                          <td className="pr-6 pt-2 whitespace-nowrap border-r-2 border-gray-200">Alloy</td>
-                          <td className="px-6 pt-2 text-right whitespace-nowrap">0.25</td>
+                          <td className="pr-6 pt-2 whitespace-nowrap border-r border-light-gray">Alloy</td>
+                          <td className="px-6 pt-2  whitespace-nowrap">176.67 LBs</td>
                         </tr>
                         <tr>
-                          <td className="pr-6 pt-2 whitespace-nowrap border-r-2 border-gray-200">Temper</td>
-                          <td className="px-6 pt-2 text-right whitespace-nowrap">0.25</td>
+                          <td className="pr-6 pt-2 whitespace-nowrap border-r border-light-gray">Temper</td>
+                          <td className="px-6 pt-2  whitespace-nowrap">T651</td>
                         </tr>
                         <tr>
-                          <td className="pr-6 pt-2 whitespace-nowrap border-r-2 border-gray-200">Source</td>
-                          <td className="px-6 pt-2 text-right whitespace-nowrap">0.25</td>
+                          <td className="pr-6 pt-2 whitespace-nowrap border-r border-light-gray">Source</td>
+                          <td className="px-6 pt-2  whitespace-nowrap">Import</td>
+                        </tr>
+                        <tr>
+                          <td className="pr-6 pt-2 whitespace-nowrap border-r border-light-gray">Part #</td>
+                          <td className="px-6 pt-2  whitespace-nowrap">61P0250412</td>
                         </tr>
                       </tbody>
                     </table>
