@@ -60,7 +60,7 @@ export default function ProductPurchase() {
     return (
         <div className="mx-auto ">
             <div className="shadow shadow-gray-600 bg-white  m-8">
-                <p className="pl-8 pt-8 font-bold">Frequently purchased togrther</p>
+                <p className="pl-8 pt-8 text-m font-medium">Frequently purchased togrther</p>
                 <div className="flex flex-wrap -mx-6 px-8">
                     {
                         productPurchases.map(data => (
@@ -70,7 +70,7 @@ export default function ProductPurchase() {
                                         <img className="object-cover ml-4" src="../images/fixed-aspect-ratio-spacer.png" alt="Frequently purchased togrther" />
                                     </div>
                                     <div className="p-4 pt-1">
-                                        <h2 className="mt-2 mb-4  font-semi-bold">{data.name}</h2>
+                                        <h2 className="mt-2 mb-4 font-medium">{data.name}</h2>
                                         <div className="container mx-auto pb-6 flex">
                                             <div className="flex flex-col">
                                                 <div className="-my-2 overflow-x-auto">

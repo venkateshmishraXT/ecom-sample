@@ -36,10 +36,10 @@ export default function ProductDetails({id=61012050}) {
     404 | This page could not be found.
     </div>
 </div>}
-    { data &&<> <BreadCrumb productName={data.name} /> <div className="md:flex items-start justify-center pb-12 2xl:px-20 md:px-6 px-4">
+    { data &&<> <BreadCrumb productName={data.name} /> <div className="md:flex items-start justify-center pb-12 md:px-6 px-4">
       <div className="w-6/12 ">
         <div className="xl:w-236 ">
-          <div className="bg-white p-7">
+          <div className="product-image">
             <img className="w-full" alt={data.name} src={data.imagePath} />
           </div>
         </div>
@@ -57,7 +57,7 @@ export default function ProductDetails({id=61012050}) {
           </div>
         </div>
       </div>
-      <div className="xl:w-2/5 md:w-1/2 lg:ml-8 md:ml-6 md:mt-0 mt-6">
+      <div className="xl:w-3/5 md:w-1/2 lg:ml-8 md:ml-6 md:mt-0 mt-6">
         <div className="bg-white p-7">
           <div className="border-b border-light-gray pb-6">
             <h1 className="lg:text-2xl text-xl font-semibold lg:leading-6 leading-7 text-gray-800 dark:text-white mt-2">{data?.name}"</h1>
