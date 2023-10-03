@@ -5,20 +5,17 @@ import { ReadMore } from "../ReadMore";
 import { Spinner } from "../Skeleton";
 
 
-export default function ProductDetails({id=1}) {
+export default function ProductDetails({id=61012050}) {
   const [data,setData] = useState<any>();
   const [spinner,setSpinner] = useState<any>(true);
-  console.log(id,'asdasdsadsad')
   useEffect(() => {
-    fetch('./product.json')
+    fetch('../product.json')
    .then(response => response.json())
    .then(json => {
     let result = json.filter((el:any) => el.id == id);
     setSpinner(false);
-    console.log(result,'reshsjdsahj')
     setData(result[0])
    }
-    
     )
   },[id])
   return (

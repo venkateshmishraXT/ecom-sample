@@ -22,7 +22,7 @@ export default function Navbar() {
                         <div className="row-span-3 relative flex flex-col justify-between">
                             <div className="block">
                                 <div className="m-3">
-                                    <img src="./logo.png" width={200}
+                                    <img src="../logo.png" width={200}
                                         height={50} />
                                 </div>
 
@@ -50,11 +50,11 @@ export default function Navbar() {
                             </div>
                             <div  className="flex justify-end pt-4">
                                 <button type="button" className="text-light-blue bg-white border-light-blue border hover:white focus:ring-4 focus:outline-none focus:ring-white font-medium text-sm px-4 py-2.5 text-center inline-flex items-center mr-2 dark:bg-light-blue dark:hover:bg-light-blue dark:focus:ring-light-blue">
-                                    <img src="./icon-dashboard.png" className="pr-2" />
+                                    <img src="../icon-dashboard.png" className="pr-2" />
                                     Dashboard
                                 </button>
                                 <button type="button" className="text-white bg-light-blue hover:bg-light-blue focus:ring-4 focus:outline-none focus:ring-light-blue font-medium text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-light-blue dark:hover:bg-light-blue dark:focus:ring-light-blue">
-                                <img src="./icon-quote.png" className="pr-2" />
+                                <img src="../icon-quote.png" className="pr-2" />
                                     New Quote
                                 </button>
                             </div>
