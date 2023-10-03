@@ -19,7 +19,7 @@ const Counter = ({sendProductCount}:any) => {
   return (
     <div className="flex items-center justify-start mt-4">
       <button
-        className="text-black border-black-600 font-bold py-2 px-4 rounded border"
+        className="text-black border-black-600 font-bold py-2 px-4  border"
         onClick={decrement}
         disabled={count==1}
       >
@@ -32,7 +32,7 @@ const Counter = ({sendProductCount}:any) => {
         readOnly
       />
       <button
-        className="text-black border-black-600 font-bold py-2 px-4 rounded border"
+        className="text-black border-black-600 font-bold py-2 px-4  border"
         onClick={increment}
       >
         +

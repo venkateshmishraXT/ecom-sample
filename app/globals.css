@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* @tailwind colors */
 
 body{
   background: #F6F6F6;
@@ -14,10 +15,17 @@ body{
 }
 
 .customInput input[type="radio"]:checked + label {
-  background-color: #4CAF50;
-  border-color: #4CAF50;
-  color: white;
+  background-color: transparent;
+  border-color: theme('colors.black');
+  color: theme('colors.black');
+  border-width: 1px;
   }
+
+  .customInput input[type="radio"] + label {
+    background-color: theme('colors.stone');
+    border-color: theme('colors.stone');
+    color: theme('colors.black');
+    }
 
   .error {
     color: red;
