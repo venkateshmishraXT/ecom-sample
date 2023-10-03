@@ -1,15 +1,33 @@
 import Counter from "../Counter";
 import { ReadMore } from "../ReadMore";
 
+
 export default function ProductDetails() {
   return (
     <div className="md:flex items-start justify-center py-12 2xl:px-20 md:px-6 px-4">
+      <div className="w-6/12 ">
+        <div className="xl:w-236 ">
+          <div className="bg-white p-7">
+            <img className="w-full" alt="image of a girl posing" src="https://i.ibb.co/QMdWfzX/component-image-one.png" />
 
-      <div className="xl:w-236 lg:w-3/6 w-80">
-        <div className="bg-white p-7">
-          <img className="w-full" alt="Aluminum Plate" src="./product-1.png" />
+
+          </div>
+        </div>
+        <div className="xl:w-236 mt-8 ">
+          <div className="bg-white p-7">
+            <p className="font-bold">How to measure</p>
+            <div className="flow-root flex">
+              <p className="float-left w-8/12">rem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
+              <p className="float-right w-44">
+                <img className="w-full w-32" alt="image of a girl posing" src="https://i.ibb.co/QMdWfzX/component-image-one.png" />
+              </p>
+            </div>
+
+
+          </div>
         </div>
       </div>
+
 
       <div className="xl:w-2/5 md:w-1/2 lg:ml-8 md:ml-6 md:mt-0 mt-6">
         <div className="bg-white p-7">
@@ -20,20 +38,18 @@ export default function ProductDetails() {
           <div className="py-4 flex items-center justify-between">
             {/* <p className="text-base leading-4 text-gray-800 dark:text-gray-300">Colours</p> */}
             <ReadMore>
-            6061-T651 Aluminum is...Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla leo ligula, faucibus eu venenatis quis, convallis non nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla leo ligula, faucibus eu venenatis quis, convallis non nisi.
+              GeeksforGeeks: A Computer Science portal for geeks.
+              It contains well written, well thought and well explained
+              computer science, programming articles and quizzes.
+              It provides a variety of services for you to learn, so thrive
+              and also have fun! Free Tutorials, Millions of Articles, Live,
+              Online and Classroom Courses ,Frequent Coding Competitions,
+              Webinars by Industry Experts, Internship opportunities, and Job
+              Opportunities. Knowledge is power!
             </ReadMore>
           </div>
-          {/* <div className="py-4 border-b border-gray-200 flex items-center justify-between">
-      <p className="text-base leading-4 text-gray-800 dark:text-gray-300">Size</p>
-      <div className="flex items-center justify-center">
-        <p className="text-sm leading-none text-gray-600 dark:text-gray-300 mr-3">38.2</p>
-        <svg className="text-gray-300 dark:text-white cursor-pointer" width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M1 1L5 5L1 9" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-      </div>
-    </div> */}
           <div className="flex items-center w-10/12">
-            <label htmlFor="countries" className="block mb-2 mr-3 text-sm font-medium text-gray-900 dark:text-white flex items-center">Thickness(A)</label>
+            <label for="countries" className="block mb-2 mr-3 text-sm font-medium text-gray-900 dark:text-white flex items-center">Thickness(A)</label>
             <select id="countries" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
               <option selected>Choose a Thickness</option>
               <option value="US">0.25</option>
@@ -45,21 +61,22 @@ export default function ProductDetails() {
           <div className="flex items-center space-x-4 mt-4">
             <label className="block mb-2 mr-6 text-sm font-medium text-gray-900 dark:text-white flex items-center mt-2">Width(B)</label>
 
-            <div className="relative inline-flex items-center">
+
+            <div className="relative inline-flex items-center customInput">
               <input type="radio" id="option1" name="radio-group" className="hidden" />
-              <label htmlFor="option1" className="cursor-pointer bg-white border border-gray-300 p-2">
+              <label for="option1" class="cursor-pointer bg-white border border-gray-300 p-2">
                 48.5
               </label>
             </div>
-            <div className="relative inline-flex items-center">
+            <div className="relative inline-flex items-center customInput">
               <input type="radio" id="option2" name="radio-group" className="hidden" />
-              <label htmlFor="option2" className="cursor-pointer bg-white border border-gray-300 p-2">
+              <label for="option2" class="cursor-pointer bg-white border border-gray-300 p-2">
                 68.5
               </label>
             </div>
-            <div className="relative inline-flex items-center">
+            <div className="relative inline-flex items-center customInput">
               <input type="radio" id="option3" name="radio-group" className="hidden" />
-              <label htmlFor="option3" className="cursor-pointer bg-white border border-gray-300 p-2">
+              <label for="option3" class="cursor-pointer bg-white border border-gray-300 p-2">
                 Custom
               </label>
             </div>
@@ -67,15 +84,16 @@ export default function ProductDetails() {
           <div className="flex items-center space-x-4 mt-4">
             <label className="block mb-2 mr-4 text-sm font-medium text-gray-900 dark:text-white flex items-center mt-2">Length(C)</label>
 
-            <div className="relative inline-flex items-center">
+
+            <div className="relative inline-flex items-center customInput">
               <input type="radio" id="length1" name="radio-group1" className="hidden" />
-              <label htmlFor="length1" className="cursor-pointer bg-white border border-gray-300 p-2">
+              <label for="length1" class="cursor-pointer bg-white border border-gray-300 p-2">
                 144.5
               </label>
             </div>
-            <div className="relative inline-flex items-center">
+            <div className="relative inline-flex items-center customInput">
               <input type="radio" id="length2" name="radio-group1" className="hidden" />
-              <label htmlFor="length2" className="cursor-pointer bg-white border border-gray-300 p-2">
+              <label for="length2" class="cursor-pointer bg-white border border-gray-300 p-2">
                 Custom
               </label>
             </div>
@@ -83,15 +101,16 @@ export default function ProductDetails() {
           <div className="flex items-center space-x-4 mt-4">
             <label className="block mb-2 mr-2-3 text-sm font-medium text-gray-900 dark:text-white flex items-center mt-2">Source</label>
 
-            <div className="relative inline-flex items-center">
+
+            <div className="relative inline-flex items-center customInput">
               <input type="radio" id="source1" name="radio-group1" className="hidden" />
-              <label htmlFor="source1" className="cursor-pointer bg-white border border-gray-300 p-2">
+              <label for="source1" class="cursor-pointer bg-white border border-gray-300 p-2">
                 Domestic
               </label>
             </div>
-            <div className="relative inline-flex items-center">
+            <div className="relative inline-flex items-center customInput">
               <input type="radio" id="source2" name="radio-group1" className="hidden" />
-              <label htmlFor="source2" className="cursor-pointer bg-white border border-gray-300 p-2">
+              <label for="source2" class="cursor-pointer bg-white border border-gray-300 p-2">
                 Import
               </label>
             </div>
@@ -100,52 +119,70 @@ export default function ProductDetails() {
             <p className="font-bold mt-4">$303</p>
             <Counter />
 
+
           </div>
           <div className="mt-4">
-            <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 w-72">Add to Cart</button>
+            <button type="button" className="text-white bg-blue hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 w-72">Add to Cart</button>
+
 
           </div>
-          <div className="flex items-center pl-4 border border-gray-200 rounded dark:border-gray-700">
-            <input id="bordered-radio-1" type="radio" value="" name="bordered-radio" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-            <label htmlFor="bordered-radio-1" className="w-full py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Schedule a recurring Order</label>
+          <div className="flex items-center pl-4 border border-gray-200 rounded dark:border-gray-700 bg-slate-300 mt-4">
+            <input id="bordered-radio-1" type="checkbox" value="" name="bordered-radio" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+            <label for="bordered-radio-1" className="w-full py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Schedule a recurring Order</label>
+          </div>
+          <div>
+            <p className="font-bold mt-4">Product Details</p>
+
+
+          </div>
+          <div className="container mx-auto pb-6 flex">
+            <div className="flex flex-col">
+              <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                  <div className="overflow-hidden sm:rounded-lg">
+                    <table className="min-w-full">
+                      <tbody className="bg-white">
+                        <tr>
+                          <td className="pr-6 pt-2 whitespace-nowrap border-r-2 border-gray-200">Thickness (A)</td>
+                          <td className="px-6 pt-2 text-right whitespace-nowrap">0.25</td>
+                        </tr>
+                        <tr>
+                          <td className="pr-6 pt-2 whitespace-nowrap border-r-2 border-gray-200">Width (B)</td>
+                          <td className="px-6 pt-2 text-right whitespace-nowrap">0.25</td>
+                        </tr>
+                        <tr>
+                          <td className="pr-6 pt-2 whitespace-nowrap border-r-2 border-gray-200">Length (C)</td>
+                          <td className="px-6 pt-2 text-right whitespace-nowrap">0.25</td>
+                        </tr>
+                        <tr>
+                          <td className="pr-6 pt-2 whitespace-nowrap border-r-2 border-gray-200">Weight (each)</td>
+                          <td className="px-6 pt-2 text-right whitespace-nowrap">0.25</td>
+                        </tr>
+                        <tr>
+                          <td className="pr-6 pt-2 whitespace-nowrap border-r-2 border-gray-200">Alloy</td>
+                          <td className="px-6 pt-2 text-right whitespace-nowrap">0.25</td>
+                        </tr>
+                        <tr>
+                          <td className="pr-6 pt-2 whitespace-nowrap border-r-2 border-gray-200">Temper</td>
+                          <td className="px-6 pt-2 text-right whitespace-nowrap">0.25</td>
+                        </tr>
+                        <tr>
+                          <td className="pr-6 pt-2 whitespace-nowrap border-r-2 border-gray-200">Source</td>
+                          <td className="px-6 pt-2 text-right whitespace-nowrap">0.25</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div>
-            <p className="xl:pr-48 text-base lg:leading-tight leading-normal text-gray-600 dark:text-gray-300 mt-7">It is a long established fact that a reader will be distracted by thereadable content of a page when looking at its layout. The point of usingLorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
-            <p className="text-base leading-4 mt-7 text-gray-600 dark:text-gray-300">Product Code: 8BN321AF2IF0NYA</p>
-            <p className="text-base leading-4 mt-4 text-gray-600 dark:text-gray-300">Length: 13.2 inches</p>
-            <p className="text-base leading-4 mt-4 text-gray-600 dark:text-gray-300">Height: 10 inches</p>
-            <p className="text-base leading-4 mt-4 text-gray-600 dark:text-gray-300">Depth: 5.1 inches</p>
-            <p className="md:w-96 text-base leading-normal text-gray-600 dark:text-gray-300 mt-4">Composition: 100% calf leather, inside: 100% lamb leather</p>
-          </div>
-          <div>
-            <div className="border-t border-b py-4 mt-7 border-gray-200">
-              <div data-menu className="flex justify-between items-center cursor-pointer">
-                <p className="text-base leading-4 text-gray-800 dark:text-gray-300">Shipping and returns</p>
-                <button className="cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 rounded" role="button" aria-label="show or hide">
-                  <svg className="transform text-gray-300 dark:text-white" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9 1L5 5L1 1" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </button>
-              </div>
-              <div className="hidden pt-4 text-base leading-normal pr-12 mt-4 text-gray-600 dark:text-gray-300" id="sect">You will be responsible for paying for your own shipping costs for returning your item. Shipping costs are nonrefundable</div>
-            </div>
-          </div>
-          <div>
-            <div className="border-b py-4 border-gray-200">
-              <div data-menu className="flex justify-between items-center cursor-pointer">
-                <p className="text-base leading-4 text-gray-800 dark:text-gray-300">Contact us</p>
-                <button className="cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 rounded" role="button" aria-label="show or hide">
-                  <svg className="transform text-gray-300 dark:text-white" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9 1L5 5L1 1" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </button>
-              </div>
-              <div className="hidden pt-4 text-base leading-normal pr-12 mt-4 text-gray-600 dark:text-gray-300" id="sect">If you have any questions on how to return your item to us, contact us.</div>
-            </div>
-          </div>
+
         </div>
       </div>
     </div>
   )
+
+
 }
