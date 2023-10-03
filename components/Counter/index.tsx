@@ -1,16 +1,18 @@
 "use client"
 import React, { useState } from 'react';
 
-const Counter = () => {
-  const [count, setCount] = useState(0);
+const Counter = ({sendProductCount}:any) => {
+  const [count, setCount] = useState(1);
 
   const increment = () => {
     setCount(count + 1);
+    sendProductCount(count+1)
   };
 
   const decrement = () => {
     if (count > 0) {
       setCount(count - 1);
+      sendProductCount(count-1)
     }
   };
 
@@ -19,6 +21,7 @@ const Counter = () => {
       <button
         className="text-black border-black-600 font-bold py-2 px-4 rounded border"
         onClick={decrement}
+        disabled={count==1}
       >
         -
       </button>

@@ -62,7 +62,7 @@ export default function ProductPurchase() {
             <div className="flex flex-wrap -mx-6 px-8">
                 {
                     productPurchases.map(data => (
-                        <div className="w-full sm:w-1/2 md:w-1/4 xl:w-1/6 p-4">
+                        <div className="w-full sm:w-1/2 md:w-1/4 xl:w-1/6 p-4" key={data.id}>
                         <a href="" className="c-card block bg-white shadow-md hover:shadow-xl rounded-lg overflow-hidden">
                         <div className="relative pb-48 overflow-hidden">
                           <img className="absolute inset-0 h-full w-full object-cover" src="../fixed-aspect-ratio-spacer.png" alt="" />
