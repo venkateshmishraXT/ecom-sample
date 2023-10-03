@@ -7,6 +7,15 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    fontFamily: {
+      sans: [
+        '"Inter var", sans-serif',
+        {
+          fontFeatureSettings: '"cv11", "ss01"',
+          fontVariationSettings: '"opsz" 32'
+        },
+      ],
+    },
     colors: {
       'blue': '#193A80',
       'light-blue': '#418FDE',
@@ -14,7 +23,7 @@ const config: Config = {
       'black': '#2F2E2E',
       'gray': '#595858',
       'light-gray': '#DDDDDD',
-      'stone': 'F6F6F6'
+      'stone': '#F6F6F6'
     },
     extend: {
       backgroundImage: {

@@ -28,7 +28,7 @@ export default function ProductDetails({id=61012050}) {
     spinner? <Spinner /> :
     <>
     {!data && <div className="flex justify-center items-center h-screen">
-    <div className="error p-4 rounded text-black">
+    <div className="p-4 rounded text-black">
     404 | This page could not be found.
     </div>
 </div>}
@@ -36,7 +36,7 @@ export default function ProductDetails({id=61012050}) {
       <div className="w-6/12 ">
         <div className="xl:w-236 ">
           <div className="bg-white p-7">
-            <img className="w-full" alt="Aluminum Plate" src="../images/product-1.png" />
+            <img className="w-full" alt={data.name} src={data.imagePath} />
           </div>
         </div>
         <div className="xl:w-236 mt-8 ">
