@@ -1,64 +1,17 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 
 export default function ProductPurchase() {
-    const productPurchases = [
-        {
-            name: '6061 Aluminum Plate 0.25”',
-            width: '45.5"',
-            length: '144.5"',
-            temper: "T651",
-            source: "Import",
-            price: "129",
-            id: 1
-        },
-        {
-            name: "6061 Aluminum Plate 0.35”",
-            width: 13,
-            length: 12,
-            temper: "T651",
-            source: "Import",
-            price: "12",
-            id: 2
-        },
-        {
-            name: "6061 Aluminum Plate 0.45”",
-            width: 13,
-            length: 12,
-            temper: "T651",
-            source: "Import",
-            price: "12",
-            id: 3
-        },
-        {
-            name: "6061 Aluminum Plate 0.55”",
-            width: 13,
-            length: 12,
-            temper: "T651",
-            source: "Import",
-            price: "12",
-            id: 4
-        },
-        {
-            name: "6061 Aluminum Plate 0.65”",
-            width: 13,
-            length: 12,
-            temper: "T651",
-            source: "Import",
-            price: "12",
-            id: 5
-        },
-        {
-            name: "6061 Aluminum Plate 0.75”",
-            width: 13,
-            length: 12,
-            temper: "T651",
-            source: "Import",
-            price: "12",
-            id: 6
-        }
-    ]
+    const [productPurchases, setProductPurchases] = useState([])
+    useEffect(() => {
+        fetch('../data/purchasedProduct.json')
+            .then(response => response.json())
+            .then(json => {
+                setProductPurchases(json)
+            }
+            )
+    }, [])
     return (
-        <div className="mx-auto ">
+        productPurchases && <div className="mx-auto ">
             <div className="shadow shadow-gray-600 bg-white  m-8">
                 <p className="pl-8 pt-8 font-bold">Frequently purchased togrther</p>
                 <div className="flex flex-wrap -mx-6 px-8">
@@ -95,7 +48,6 @@ export default function ProductPurchase() {
                                                                         <td className=" pt-2 whitespace-nowrap border-r border-light-gray">Source</td>
                                                                         <td className="px-4 pt-2  whitespace-nowrap">{data.source}</td>
                                                                     </tr>
-
                                                                 </tbody>
                                                             </table>
                                                         </div>
@@ -103,7 +55,6 @@ export default function ProductPurchase() {
                                                 </div>
                                             </div>
                                         </div>
-                                        {/* <p className="text-sm">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.</p> */}
                                         <div className="mt-3 flex items-center">
                                             <span className="text-sm font-semibold"></span>&nbsp;<span className="font-bold text-xl">$120<sup>00</sup></span>&nbsp;
                                         </div>
@@ -113,11 +64,8 @@ export default function ProductPurchase() {
                             </div>
                         ))
                     }
-
                 </div>
             </div>
-
         </div>
     )
-
 }

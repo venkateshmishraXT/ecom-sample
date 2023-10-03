@@ -1,0 +1,56 @@
+[
+    {
+        "name": "6061 Aluminum Plate 0.25”",
+        "width": "45.5”",
+        "length": "144.5",
+        "temper": "T651",
+        "source": "Import",
+        "price": "129",
+        "id": 1
+    },
+    {
+        "name": "6061 Aluminum Plate 0.35”",
+        "width": 13,
+        "length": 12,
+        "temper": "T651",
+        "source": "Import",
+        "price": "12",
+        "id": 2
+    },
+    {
+        "name": "6061 Aluminum Plate 0.45”",
+        "width": 13,
+        "length": 12,
+        "temper": "T651",
+        "source": "Import",
+        "price": "12",
+        "id": 3
+    },
+    {
+        "name": "6061 Aluminum Plate 0.55”",
+        "width": 13,
+        "length": 12,
+        "temper": "T651",
+        "source": "Import",
+        "price": "12",
+        "id": 4
+    },
+    {
+        "name": "6061 Aluminum Plate 0.65”",
+        "width": 13,
+        "length": 12,
+        "temper": "T651",
+        "source": "Import",
+        "price": "12",
+        "id": 5
+    },
+    {
+        "name": "6061 Aluminum Plate 0.75”",
+        "width": 13,
+        "length": 12,
+        "temper": "T651",
+        "source": "Import",
+        "price": "12",
+        "id": 6
+    }
+]
