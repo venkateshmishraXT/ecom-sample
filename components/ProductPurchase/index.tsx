@@ -1,3 +1,5 @@
+import React from "react"
+
 export default function ProductPurchase() {
     const productPurchases = [
         {
@@ -65,7 +67,9 @@ export default function ProductPurchase() {
                         <div className="w-full sm:w-1/2 md:w-1/4 xl:w-1/6 p-4">
                         <a href="" className="c-card block bg-white shadow-md hover:shadow-xl rounded-lg overflow-hidden">
                         <div className="relative pb-48 overflow-hidden">
-                          <img className="absolute inset-0 h-full w-full object-cover" src="../fixed-aspect-ratio-spacer.png" alt="" />
+                          <img className="absolute inset-0 h-full w-full object-cover" src="../images/fixed-aspect-ratio-spacer.png" alt="Frequently purchased togrther
+
+" />
                         </div>
                         <div className="p-4">
                           <h2 className="mt-2 mb-2  font-bold">{data.name}</h2>

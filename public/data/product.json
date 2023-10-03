@@ -3,7 +3,7 @@
     "id": 61012050,
     "name": "6061 Aluminum Plate 0.25",
     "description": "rem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
-    "price": 549,
+    "price": 151.67,
     "thickness": [
         {
             "id": 1,
@@ -52,21 +52,21 @@
 },
 {
     "id": 61012051,
-    "name": "6061 Aluminum Plate 0.25",
-    "description": "rem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
-    "price": 549,
+    "name": "6065 Aluminum Plate 0.35",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
+    "price": 179.50,
     "thickness": [
         {
             "id": 1,
-            "thick": 0.25
+            "thick": 0.35
         },
         {
             "id": 2,
-            "thick": 0.50
+            "thick": 0.70
         },
         {
             "id": 3,
-            "thick": 0.75
+            "thick": 0.90
         }
     ],
     "width": [

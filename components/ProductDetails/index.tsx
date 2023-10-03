@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Counter from "../Counter";
 import { ReadMore } from "../ReadMore";
 import { Spinner } from "../Skeleton";
@@ -9,7 +9,7 @@ export default function ProductDetails({id=61012050}) {
   const [data,setData] = useState<any>();
   const [spinner,setSpinner] = useState<any>(true);
   useEffect(() => {
-    fetch('../product.json')
+    fetch('../data/product.json')
    .then(response => response.json())
    .then(json => {
     let result = json.filter((el:any) => el.id == id);
@@ -22,24 +22,24 @@ export default function ProductDetails({id=61012050}) {
     spinner? <Spinner /> :
     <>
     {!data && <div className="flex justify-center items-center h-screen">
-    <div className="error p-4 rounded">
-        Something went Wrong
+    <div className="error p-4 rounded text-black">
+    404 | This page could not be found.
     </div>
 </div>}
     { data && <div className="md:flex items-start justify-center py-12 2xl:px-20 md:px-6 px-4">
       <div className="w-6/12 ">
         <div className="xl:w-236 ">
           <div className="bg-white p-7">
-            <img className="w-full" alt="image of a girl posing" src="https://i.ibb.co/QMdWfzX/component-image-one.png" />
+            <img className="w-full" alt="Aluminum Plate" src="../images/product-1.png" />
           </div>
         </div>
         <div className="xl:w-236 mt-8 ">
           <div className="bg-white p-7">
             <p className="font-bold">How to measure</p>
             <div className="flow-root flex">
-              <p className="float-left w-8/12">rem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
-              <p className="float-right w-44">
-                <img className="w-full w-32" alt="image of a girl posing" src="https://i.ibb.co/QMdWfzX/component-image-one.png" />
+              <p className="float-left w-8/12">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the size guide.</p>
+              <p className="float-right pr-3">
+                <img className="w-full" alt="size guide" src="../images/size-guide.png" />
               </p>
             </div>
 
@@ -62,7 +62,7 @@ export default function ProductDetails({id=61012050}) {
             </ReadMore>
           </div>
           <div className="flex items-center w-10/12">
-            <label for="countries" className="block mb-2 mr-3 text-sm font-medium text-gray-900 dark:text-white flex items-center">Thickness(A)</label>
+            <label htmlFor="countries" className="block mb-2 mr-3 text-sm font-medium text-gray-900 dark:text-white flex items-center">Thickness(A)</label>
             <select id="countries" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
               <option selected>Choose a Thickness</option>
               <option value="US">0.25</option>
@@ -77,19 +77,19 @@ export default function ProductDetails({id=61012050}) {
 
             <div className="relative inline-flex items-center customInput">
               <input type="radio" id="option1" name="radio-group" className="hidden" />
-              <label for="option1" className="cursor-pointer bg-white border border-gray-300 p-2">
+              <label htmlFor="option1" className="cursor-pointer bg-white border border-gray-300 p-2">
                 48.5
               </label>
             </div>
             <div className="relative inline-flex items-center customInput">
               <input type="radio" id="option2" name="radio-group" className="hidden" />
-              <label for="option2" className="cursor-pointer bg-white border border-gray-300 p-2">
+              <label htmlFor="option2" className="cursor-pointer bg-white border border-gray-300 p-2">
                 68.5
               </label>
             </div>
             <div className="relative inline-flex items-center customInput">
               <input type="radio" id="option3" name="radio-group" className="hidden" />
-              <label for="option3" className="cursor-pointer bg-white border border-gray-300 p-2">
+              <label htmlFor="option3" className="cursor-pointer bg-white border border-gray-300 p-2">
                 Custom
               </label>
             </div>
@@ -100,13 +100,13 @@ export default function ProductDetails({id=61012050}) {
 
             <div className="relative inline-flex items-center customInput">
               <input type="radio" id="length1" name="radio-group1" className="hidden" />
-              <label for="length1" className="cursor-pointer bg-white border border-gray-300 p-2">
+              <label htmlFor="length1" className="cursor-pointer bg-white border border-gray-300 p-2">
                 144.5
               </label>
             </div>
             <div className="relative inline-flex items-center customInput">
               <input type="radio" id="length2" name="radio-group1" className="hidden" />
-              <label for="length2" className="cursor-pointer bg-white border border-gray-300 p-2">
+              <label htmlFor="length2" className="cursor-pointer bg-white border border-gray-300 p-2">
                 Custom
               </label>
             </div>
@@ -117,13 +117,13 @@ export default function ProductDetails({id=61012050}) {
 
             <div className="relative inline-flex items-center customInput">
               <input type="radio" id="source1" name="radio-group1" className="hidden" />
-              <label for="source1" className="cursor-pointer bg-white border border-gray-300 p-2">
+              <label htmlFor="source1" className="cursor-pointer bg-white border border-gray-300 p-2">
                 Domestic
               </label>
             </div>
             <div className="relative inline-flex items-center customInput">
               <input type="radio" id="source2" name="radio-group1" className="hidden" />
-              <label for="source2" className="cursor-pointer bg-white border border-gray-300 p-2">
+              <label htmlFor="source2" className="cursor-pointer bg-white border border-gray-300 p-2">
                 Import
               </label>
             </div>
@@ -137,7 +137,7 @@ export default function ProductDetails({id=61012050}) {
           </div>
           <div className="flex items-center pl-4 border border-gray-200 rounded dark:border-gray-700 bg-slate-300 mt-4">
             <input id="bordered-radio-1" type="checkbox" value="" name="bordered-radio" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-            <label for="bordered-radio-1" className="w-full py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Schedule a recurring Order</label>
+            <label htmlFor="bordered-radio-1" className="w-full py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Schedule a recurring Order</label>
           </div>
           <div>
             <p className="font-bold mt-4">Product Details</p>
