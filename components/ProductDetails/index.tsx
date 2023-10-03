@@ -1,16 +1,32 @@
+"use client"
+import { useEffect, useState } from "react";
 import Counter from "../Counter";
 import { ReadMore } from "../ReadMore";
+import { Spinner } from "../Skeleton";
 
 
 export default function ProductDetails() {
+  const [data,setData] = useState<any>();
+  const [spinner,setSpinner] = useState<any>(true);
+
+  useEffect(() => {
+    fetch('./product.json')
+   .then(response => response.json())
+   .then(json => {
+    let result = json.filter((el:any) => el.id === 1);
+    setSpinner(false);
+    setData(result[0])
+   }
+    
+    )
+  },[])
   return (
-    <div className="md:flex items-start justify-center py-12 2xl:px-20 md:px-6 px-4">
+    spinner? <Spinner /> :
+    data && <div className="md:flex items-start justify-center py-12 2xl:px-20 md:px-6 px-4">
       <div className="w-6/12 ">
         <div className="xl:w-236 ">
           <div className="bg-white p-7">
             <img className="w-full" alt="image of a girl posing" src="https://i.ibb.co/QMdWfzX/component-image-one.png" />
-
-
           </div>
         </div>
         <div className="xl:w-236 mt-8 ">
@@ -32,20 +48,13 @@ export default function ProductDetails() {
       <div className="xl:w-2/5 md:w-1/2 lg:ml-8 md:ml-6 md:mt-0 mt-6">
         <div className="bg-white p-7">
           <div className="border-b border-gray-200 pb-6">
-            <h1 className="lg:text-2xl text-xl font-semibold lg:leading-6 leading-7 text-gray-800 dark:text-white mt-2">6061 Aluminum Plate 0.25"</h1>
+            <h1 className="lg:text-2xl text-xl font-semibold lg:leading-6 leading-7 text-gray-800 dark:text-white mt-2">{data?.name}"</h1>
             <h1 className="lg:text-2xl text-xl font-semibold lg:leading-6 leading-7 text-gray-800 dark:text-white mt-2">$153<sup>83</sup></h1>
           </div>
           <div className="py-4 flex items-center justify-between">
             {/* <p className="text-base leading-4 text-gray-800 dark:text-gray-300">Colours</p> */}
             <ReadMore>
-              GeeksforGeeks: A Computer Science portal for geeks.
-              It contains well written, well thought and well explained
-              computer science, programming articles and quizzes.
-              It provides a variety of services for you to learn, so thrive
-              and also have fun! Free Tutorials, Millions of Articles, Live,
-              Online and Classroom Courses ,Frequent Coding Competitions,
-              Webinars by Industry Experts, Internship opportunities, and Job
-              Opportunities. Knowledge is power!
+            {data?.description}
             </ReadMore>
           </div>
           <div className="flex items-center w-10/12">
@@ -64,19 +73,19 @@ export default function ProductDetails() {
 
             <div className="relative inline-flex items-center customInput">
               <input type="radio" id="option1" name="radio-group" className="hidden" />
-              <label for="option1" class="cursor-pointer bg-white border border-gray-300 p-2">
+              <label for="option1" className="cursor-pointer bg-white border border-gray-300 p-2">
                 48.5
               </label>
             </div>
             <div className="relative inline-flex items-center customInput">
               <input type="radio" id="option2" name="radio-group" className="hidden" />
-              <label for="option2" class="cursor-pointer bg-white border border-gray-300 p-2">
+              <label for="option2" className="cursor-pointer bg-white border border-gray-300 p-2">
                 68.5
               </label>
             </div>
             <div className="relative inline-flex items-center customInput">
               <input type="radio" id="option3" name="radio-group" className="hidden" />
-              <label for="option3" class="cursor-pointer bg-white border border-gray-300 p-2">
+              <label for="option3" className="cursor-pointer bg-white border border-gray-300 p-2">
                 Custom
               </label>
             </div>
@@ -87,13 +96,13 @@ export default function ProductDetails() {
 
             <div className="relative inline-flex items-center customInput">
               <input type="radio" id="length1" name="radio-group1" className="hidden" />
-              <label for="length1" class="cursor-pointer bg-white border border-gray-300 p-2">
+              <label for="length1" className="cursor-pointer bg-white border border-gray-300 p-2">
                 144.5
               </label>
             </div>
             <div className="relative inline-flex items-center customInput">
               <input type="radio" id="length2" name="radio-group1" className="hidden" />
-              <label for="length2" class="cursor-pointer bg-white border border-gray-300 p-2">
+              <label for="length2" className="cursor-pointer bg-white border border-gray-300 p-2">
                 Custom
               </label>
             </div>
@@ -104,13 +113,13 @@ export default function ProductDetails() {
 
             <div className="relative inline-flex items-center customInput">
               <input type="radio" id="source1" name="radio-group1" className="hidden" />
-              <label for="source1" class="cursor-pointer bg-white border border-gray-300 p-2">
+              <label for="source1" className="cursor-pointer bg-white border border-gray-300 p-2">
                 Domestic
               </label>
             </div>
             <div className="relative inline-flex items-center customInput">
               <input type="radio" id="source2" name="radio-group1" className="hidden" />
-              <label for="source2" class="cursor-pointer bg-white border border-gray-300 p-2">
+              <label for="source2" className="cursor-pointer bg-white border border-gray-300 p-2">
                 Import
               </label>
             </div>
@@ -118,13 +127,9 @@ export default function ProductDetails() {
           <div className="flex items-center space-x-4 mt-4">
             <p className="font-bold mt-4">$303</p>
             <Counter />
-
-
           </div>
           <div className="mt-4">
             <button type="button" className="text-white bg-blue hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 w-72">Add to Cart</button>
-
-
           </div>
           <div className="flex items-center pl-4 border border-gray-200 rounded dark:border-gray-700 bg-slate-300 mt-4">
             <input id="bordered-radio-1" type="checkbox" value="" name="bordered-radio" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
@@ -132,8 +137,6 @@ export default function ProductDetails() {
           </div>
           <div>
             <p className="font-bold mt-4">Product Details</p>
-
-
           </div>
           <div className="container mx-auto pb-6 flex">
             <div className="flex flex-col">
@@ -177,8 +180,6 @@ export default function ProductDetails() {
               </div>
             </div>
           </div>
-
-
         </div>
       </div>
     </div>
