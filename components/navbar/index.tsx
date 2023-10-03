@@ -23,16 +23,16 @@ export default function Navbar() {
                         <div className="row-span-3 relative flex flex-col justify-between">
                             <div className="block">
                                 <div className="m-3">
-                                    <img src="../images/logo.png" width={200}
+                                    <img src="../images/logo.png" width={298}
                                         height={50} />
                                 </div>
 
                             </div>
                             <div className="block pt-6 text-black">
-                                <a href="#" className="px-3 py-2 text-sm font-medium" aria-current="page">Aluminum</a>
-                                <a href="#" className="px-3 py-2 text-sm font-medium">Stainless Steel</a>
-                                <a href="#" className="px-3 py-2 text-sm font-medium">Steel</a>
-                                <a href="#" className="px-3 py-2 text-sm font-medium">REM Center</a>
+                                <a href="#" className="px-6 pl-3 py-2 text-sm font-medium" aria-current="page">Aluminum</a>
+                                <a href="#" className="px-6 py-2 text-sm font-medium">Stainless Steel</a>
+                                <a href="#" className="px-6 py-2 text-sm font-medium">Steel</a>
+                                <a href="#" className="px-6 py-2 text-sm font-medium">REM Center</a>
                             </div>
                         </div>
                         <div className="row-span-3 relative flex h-24 flex-col justify-between pr-3" >

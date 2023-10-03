@@ -12,7 +12,7 @@ export const ReadMore = ({ children }:any) => {
     <p className="text">
       {isReadMore ? text.slice(0, 120) : text}
       <span  onClick={toggleReadMore} className="font-bold block underline underline-offset-4 cursor-pointer">
-        {isReadMore ? "Read more" : " show less"}
+        {isReadMore ? "Read more" : " Show less"}
       </span>
     </p>
   );

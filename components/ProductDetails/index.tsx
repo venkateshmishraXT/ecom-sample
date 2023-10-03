@@ -36,7 +36,7 @@ export default function ProductDetails({id=61012050}) {
     404 | This page could not be found.
     </div>
 </div>}
-    { data &&<> <BreadCrumb productName={data.name} /> <div className="md:flex items-start justify-center pb-12 md:px-6 px-4">
+    { data &&<> <BreadCrumb productName={data.name} /> <div className="md:flex items-start justify-center pb-2 md:px-6 px-4">
       <div className="w-6/12 ">
         <div className="xl:w-236 ">
           <div className="product-image">
@@ -45,9 +45,9 @@ export default function ProductDetails({id=61012050}) {
         </div>
         <div className="xl:w-236 mt-8 ">
           <div className="bg-white p-7">
-            <p className="font-bold">How to measure</p>
+            <p className="font-semibold">How to measure</p>
             <div className="flow-root flex">
-              <p className="float-left w-8/12">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the size guide.</p>
+              <p className="float-left w-8/12 text-sm font-normal">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the size guide.</p>
               <p className="float-right pr-3">
                 <img className="w-full" alt="size guide" src="../images/size-guide.png" />
               </p>
@@ -58,12 +58,12 @@ export default function ProductDetails({id=61012050}) {
         </div>
       </div>
       <div className="xl:w-3/5 md:w-1/2 lg:ml-8 md:ml-6 md:mt-0 mt-6">
-        <div className="bg-white p-7">
+        <div className="bg-white p-7 mt-2">
           <div className="border-b border-light-gray pb-6">
-            <h1 className="lg:text-2xl text-xl font-semibold lg:leading-6 leading-7 text-gray-800 dark:text-white mt-2">{data?.name}"</h1>
-            <h1 className="lg:text-2xl text-xl font-semibold lg:leading-6 leading-7 text-gray-800 dark:text-white mt-2">${data.price}</h1>
+            <h1 className="lg:text-2xl text-xl font-medium lg:leading-6 leading-7 text-gray-800 dark:text-white mt-2">{data?.name}"</h1>
+            <h1 className="lg:text-2xl text-xl font-medium lg:leading-6 leading-7 text-gray-800 dark:text-white mt-2">${data.price}</h1>
           </div>
-          <div className="py-4 flex items-center justify-between">
+          <div className="py-4 flex items-center justify-between text-sm">
             <ReadMore>
             {data?.description}
             </ReadMore>
