@@ -1,0 +1,2 @@
+SCRIPT_DIR1="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+java -jar "$SCRIPT_DIR1/wiremock-standalone-3.2.0.jar" --enable-stub-cors --port 3000 --https-port 3001 --verbose --root-dir "$SCRIPT_DIR1"

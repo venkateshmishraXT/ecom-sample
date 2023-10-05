@@ -1,9 +1,10 @@
+"use client"
+import API_BASE_URL from "@/config/api"
 import React, { useEffect, useState } from "react"
-
 export default function ProductPurchase() {
     const [productPurchases, setProductPurchases] = useState([])
     useEffect(() => {
-        fetch('../data/purchasedProduct.json')
+        fetch(`${API_BASE_URL}/purchasedProduct`)
             .then(response => response.json())
             .then(json => {
                 setProductPurchases(json)
@@ -16,7 +17,7 @@ export default function ProductPurchase() {
                 <p className="pl-8 pt-8 text-m font-medium">Frequently purchased togrther</p>
                 <div className="flex flex-wrap -mx-6 px-8">
                     {
-                        productPurchases.map(data => (
+                        productPurchases.map((data:any )=> (
                             <div className="w-full sm:w-1/2 md:w-1/4 xl:w-1/6 p-4" key={data.id}>
                                 <a href="" className="c-card block bg-white shadow-md hover:shadow-xl overflow-hidden">
                                     <div className="relative overflow-hidden">

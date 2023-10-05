@@ -4,6 +4,7 @@ import Counter from "../Counter";
 import { ReadMore } from "../ReadMore";
 import { Spinner } from "../Skeleton";
 import { BreadCrumb } from "../BredCrumb";
+import API_BASE_URL from "@/config/api";
 
 
 export default function ProductDetails({id=61012050}) {
@@ -11,13 +12,12 @@ export default function ProductDetails({id=61012050}) {
   const [spinner,setSpinner] = useState<any>(true);
   const [totalPrice,setTotalPrice] = useState<any>(0)
   const sendProductCountData = (productCount:any) => {
-    console.log(productCount)
     const price = productCount*data.price;
     let parseValue = parseFloat(''+price).toFixed(2)
     setTotalPrice(parseValue)
   }
   useEffect(() => {
-    fetch('../data/product.json')
+    fetch(`${API_BASE_URL}/getProductDetails`)
    .then(response => response.json())
    .then(json => {
     let result = json.filter((el:any) => el.id == id);

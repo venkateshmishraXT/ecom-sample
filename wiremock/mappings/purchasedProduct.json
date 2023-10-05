@@ -1,0 +1,17 @@
+{
+    "mappings": [
+        {
+            "request": {
+                "method": "GET",
+                "urlPath": "/purchasedProduct"
+            },
+            "response": {
+                "headers": {
+                    "content-type":  "application/json"
+                },
+                "status": 200,
+                "bodyFileName": "200-purchasedProduct.json"
+            }
+        }
+    ]
+}
