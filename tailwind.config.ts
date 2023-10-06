@@ -21,9 +21,10 @@ const config: Config = {
       'light-blue': '#418FDE',
       'white': '#FFFFFF',
       'black': '#2F2E2E',
+      'dark-gray': '#646A76',
       'gray': '#595858',
       'light-gray': '#DDDDDD',
-      'stone': '#F6F6F6'
+      'stone': '#F6F6F6',
     },
     extend: {
       backgroundImage: {

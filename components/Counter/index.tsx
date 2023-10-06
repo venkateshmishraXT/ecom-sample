@@ -27,7 +27,7 @@ const Counter = ({sendProductCount}:any) => {
       </button>
       <input
         type="text"
-        className="border border-gray-400 p-2 w-32 text-center"
+        className="border border-gray-400 p-2 w-14 md:w-32 text-center"
         value={count}
         readOnly
       />

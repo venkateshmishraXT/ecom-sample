@@ -36,37 +36,59 @@ export default function ProductDetails({id=61012050}) {
     404 | This page could not be found.
     </div>
 </div>}
-    { data &&<> <BreadCrumb productName={data.name} /> <div className="md:flex items-start justify-center pb-2 md:px-6 px-4">
-      <div className="w-6/12 ">
-        <div className="xl:w-236 ">
-          <div className="product-image">
-            <img className="w-full" alt={data.name} src={data.imagePath} />
+    { data &&<> <BreadCrumb productName={data.name} /> <div className="md:flex items-start justify-center pb-2 md:px-6">
+      <div className="w-full md:w-6/12">
+        <div className="xl:w-236 bg-white p-4 md:p-0">
+          <div className="pb-4 block md:hidden">
+            <h1 className="lg:text-2xl text-xl font-medium lg:leading-6 leading-7 text-gray-800 dark:text-white mt-2">{data?.name}"</h1>
+            <h1 className="lg:text-2xl text-xl font-medium lg:leading-6 leading-7 text-gray-800 dark:text-white mt-2">${data.price}</h1>
+          </div>
+          <div className="product-image hidden md:block">
+            <img className="w-full" alt={data.name} src={data.imagePathDesktop} />
+          </div>
+          <div className="product-image block md:hidden">
+            <img className="w-full" alt={data.name} src={data.imagePathMobile} />
           </div>
         </div>
-        <div className="xl:w-236 mt-8 ">
+        <div className="xl:w-236 mt-8 hidden md:block">
           <div className="bg-white p-7">
             <p className="font-semibold">How to measure</p>
             <div className="flow-root flex">
-              <p className="float-left w-8/12 text-sm font-normal">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the size guide.</p>
+              <p className="float-left w-6/12 lg:w-8/12 text-sm font-normal">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the size guide.</p>
               <p className="float-right pr-3">
                 <img className="w-full" alt="size guide" src="../images/size-guide.png" />
               </p>
             </div>
-
-
           </div>
         </div>
       </div>
-      <div className="xl:w-3/5 md:w-1/2 lg:ml-8 md:ml-6 md:mt-0 mt-6">
-        <div className="bg-white p-7 mt-2">
-          <div className="border-b border-light-gray pb-6">
+      <div className="bg-white p-4 pt-0 mt-4 block md:hidden">
+        <div className="flex items-center space-x-4">
+          <Counter sendProductCount={sendProductCountData} />
+          <div className="mt-3 w-3/4">
+          <p className="font-semibold">${totalPrice}</p>
+          <p className="font-semibold text-sm text-gray">
+            <span>0.25” </span><span>x </span>
+            <span>48.5” </span><span>x </span>
+            <span>144.5”</span>
+          </p>
+          </div>
+        </div>
+        <div className="mt-4">
+          <button type="button" className="text-white bg-light-blue hover:bg-light-blue focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 mr-2 dark:bg-light-blue dark:hover:bg-light-blue focus:outline-none dark:focus:ring-blue-800 w-full">Add to Cart</button>
+        </div>
+      </div>
+      <div className="xl:w-3/5 md:w-1/2 lg:ml-8 md:ml-6 md:mt-0 mt-4 md:mt-0">
+        <div className="bg-white p-4 md:p-7 mt-2">
+          <div className="border-b border-light-gray pb-6 hidden md:block">
             <h1 className="lg:text-2xl text-xl font-medium lg:leading-6 leading-7 text-gray-800 dark:text-white mt-2">{data?.name}"</h1>
             <h1 className="lg:text-2xl text-xl font-medium lg:leading-6 leading-7 text-gray-800 dark:text-white mt-2">${data.price}</h1>
           </div>
-          <div className="py-4 flex items-center justify-between text-sm">
+          <div className="py-4 block md:flex items-center justify-between text-sm">
             <ReadMore>
             {data?.description}
             </ReadMore>
+            <div className="block md:hidden border-b border-light-gray mt-4"></div>
           </div>
           <div className="flex items-center w-10/12">
             <label htmlFor="countries" className="block mb-2 mr-3 text-sm font-medium text-black-900 dark:text-white flex items-center">Thickness(A)</label>
@@ -135,19 +157,32 @@ export default function ProductDetails({id=61012050}) {
               </label>
             </div>
           </div>
-          <div className="flex items-center space-x-4 mt-4 ">
-            <p className="font-bold mt-4 w-20">${totalPrice}</p>
-            <Counter sendProductCount={sendProductCountData} />
-          </div>
-          <div className="mt-4">
-            <button type="button" className="text-white bg-light-blue hover:bg-light-blue focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-light-blue dark:hover:bg-light-blue focus:outline-none dark:focus:ring-blue-800 w-72">Add to Cart</button>
+          <div className="hidden md:block">
+            <div className="flex items-center space-x-4 mt-4 ">
+              <p className="font-bold mt-4 w-20">${totalPrice}</p>
+              <Counter sendProductCount={sendProductCountData} />
+            </div>
+            <div className="mt-4">
+              <button type="button" className="text-white bg-light-blue hover:bg-light-blue focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-light-blue dark:hover:bg-light-blue focus:outline-none dark:focus:ring-blue-800 w-72">Add to Cart</button>
+            </div>
           </div>
           <div className="flex items-center pl-4 border border-light-gray rounded dark:border-gray-700 bg-slate-300 mt-4">
             <input id="bordered-radio-1" type="checkbox" value="" name="bordered-radio" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
             <label htmlFor="bordered-radio-1" className="w-full py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Schedule a recurring Order</label>
           </div>
+          <div className="xl:w-236 mt-4 md:mt-8 block md:hidden border-b border-light-gray pb-4">
+          <div className="bg-white p-0 md:p-7">
+            <p className="font-semibold">How to measure</p>
+            <div className="flow-root flex">
+              <p className="float-left w-6/12 text-sm font-normal">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the size guide.</p>
+              <p className="float-right pr-3">
+                <img className="w-full" alt="size guide" src="../images/size-guide.png" />
+              </p>
+            </div>
+          </div>
+        </div>
           <div>
-            <p className="font-bold mt-4">Product Details</p>
+            <p className="font-semibold mt-4">Product Details</p>
           </div>
           <div className="container mx-auto pb-6 flex">
             <div className="flex flex-col">
@@ -201,8 +236,5 @@ export default function ProductDetails({id=61012050}) {
     </>
     }
     </>
-   
   )
-
-
 }

@@ -13,12 +13,12 @@ export default function ProductPurchase() {
     }, [])
     return (
         productPurchases && <div className="mx-auto ">
-            <div className="shadow shadow-gray-600 bg-white  m-8">
-                <p className="pl-8 pt-8 text-m font-medium">Frequently purchased togrther</p>
-                <div className="flex flex-wrap -mx-6 px-8">
+            <div className="shadow shadow-gray-600 bg-white md:m-8 mt-2">
+                <p className="pl-8 pt-4 md:pt-8 text-m font-medium">Frequently purchased togrther</p>
+                <div className="flex md:flex-wrap -mx-6 px-8 overflow-hidden">
                     {
                         productPurchases.map((data:any )=> (
-                            <div className="w-full sm:w-1/2 md:w-1/4 xl:w-1/6 p-4" key={data.id}>
+                            <div className="w-full sm:w-1/2 md:w-1/3 xl:w-1/6 p-4" key={data.id}>
                                 <a href="" className="c-card block bg-white shadow-md hover:shadow-xl overflow-hidden">
                                     <div className="relative overflow-hidden">
                                         <img className="object-cover ml-4" src="../images/fixed-aspect-ratio-spacer.png" alt="Frequently purchased togrther" />

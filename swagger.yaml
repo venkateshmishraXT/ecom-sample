@@ -1,0 +1,188 @@
+openapi: 3.0.3
+info:
+  title: Swagger IMSC - OpenAPI 3.0
+  description: |-
+    This is a sample swagger for imsc.
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: xyz@industrialmetalsupply.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.11
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+servers:
+  - url: http://localhost:3001/
+tags:
+  - name: product
+    description: Everything about product details
+  - name: featured product
+    description: Access to featured product
+  - name: page content
+    description: Access to page content from cms
+paths:
+  /getProductDetails:
+    post:
+      tags:
+        - product
+      summary: fetch product details based on product id
+      description: fetch product details based on product id
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                productId:
+                  type: string
+                  example: 61012050 or P61012050
+      responses:
+        '200':
+          description: Successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/productDetails'
+        '404':
+          description: Invalid product Id
+          
+  /purchasedProduct:
+    post:
+      tags:
+        - product
+      summary: fetch related products list based on product id
+      description: fetch related products list based on product id
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                productId:
+                  type: string
+                  example: 61012050 or P61012050
+      responses:
+        '200':
+          description: Successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/purchasedProduct'
+        '404':
+          description: Invalid product Id
+  /content/{pageName}:
+    get:
+      tags:
+        - pet
+      summary: Finds page base content from cms
+      description: Finds page base content from cms
+      parameters:
+        - name: pageName
+          in: path
+          description: page name to fetch content from cms
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/pageContent'
+        '404':
+          description: Invalid page name
+components:
+  schemas:
+    productDetails:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        imagePathDesktop:
+          type: string
+        imagePathMobile:
+          type: string
+        description:
+          type: string
+        price:
+          type: integer
+        thickness:
+          type: array
+          items:
+            $ref: '#/components/schemas/thickness'
+        width:
+          type: array
+          items:
+            $ref: '#/components/schemas/width'
+        length:
+          type: array
+          items:
+            $ref: '#/components/schemas/length'
+        source:
+          type: array
+          items:
+            $ref: '#/components/schemas/source'
+        measureDesc:
+            type: string
+    purchasedProduct:
+      type: object
+      items:
+        $ref: '#/components/schemas/relatedProduct'
+    thickness:      
+      type: object      
+      properties:        
+        id:          
+          type: integer
+        thick:          
+          type: integer
+    width:      
+      type: object      
+      properties:        
+        id:          
+          type: integer
+        width:          
+          type: integer
+    length:      
+      type: object      
+      properties:        
+        id:          
+          type: integer
+        length:          
+          type: integer
+    source:
+      type: object      
+      properties:        
+        id:          
+          type: integer
+        source:          
+          type: string
+    relatedProduct:
+      type: object      
+      properties:
+        id:
+          type: integer
+        name:          
+          type: string
+        width: 
+          type: string
+        length: 
+          type: string
+        temper: 
+          type: string
+        source: 
+          type: string
+        price:
+          type: integer
+    pageContent:
+      type: object      
+      properties:
+        pageName:
+          type: string
+        data:          
+          type: object
+        

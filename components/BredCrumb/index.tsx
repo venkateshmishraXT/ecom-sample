@@ -1,8 +1,8 @@
 import React from 'react';
 export const BreadCrumb = (productName:any) => {
 return (
-    <nav aria-label="breadcrumb" className="w-full m-4 mb-1 dark:bg-gray-800 dark:text-gray-100 text-sm">
-        <ol className="flex h-8 space-x-2 dark:text-gray-100 ml-3">
+    <nav aria-label="breadcrumb" className="w-full dark:bg-gray-800 dark:text-gray-100 text-sm">
+        <ol className="flex h-8 space-x-2 dark:text-gray-100 m-4 mb-2 md:mb-1 pl-0 md:pl-3">
             <li className="flex items-center">
                 <a rel="noopener noreferrer" href="#" title="Back to homepage" className="flex items-center hover:underline">Aluminum</a>
             </li>
