@@ -18,8 +18,6 @@ servers:
 tags:
   - name: product
     description: Everything about product details
-  - name: featured product
-    description: Access to featured product
   - name: page content
     description: Access to page content from cms
 paths:
@@ -75,7 +73,7 @@ paths:
   /content/{pageName}:
     get:
       tags:
-        - pet
+        - page content
       summary: Finds page base content from cms
       description: Finds page base content from cms
       parameters:
@@ -185,4 +183,3 @@ components:
           type: string
         data:          
           type: object
-        

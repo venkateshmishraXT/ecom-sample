@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "start:prod": ".next/standalone/server.js",
     "lint": "next lint",
     "stub": "./wiremock/start.sh"
   },
