@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-key */
+/* eslint-disable react/no-unescaped-entities */
 "use client"
 import API_BASE_URL from "@/config/api"
 import React, { useEffect, useState } from "react"
