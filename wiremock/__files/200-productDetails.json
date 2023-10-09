@@ -30,7 +30,7 @@
             "width": 68.5
         }
     ],
-    "length": [
+    "lengths": [
         {
             "id": 1,
             "length": 144.5
@@ -50,6 +50,14 @@
             "source": "Import"
         }
     ],
+    "thicknessData": "0.25",
+    "widthData": "0.35",
+    "lengthData": "0.45",
+    "weight": "176.67 LBs",
+    "alloy": "166.67 LBs",
+    "temper": "T651",
+    "sourceData": "Domestic",
+    "part": "61P0250412",
     "measureDesc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries"
 },
 {
@@ -83,7 +91,7 @@
             "width": 68.5
         }
     ],
-    "length": [
+    "lengths": [
         {
             "id": 1,
             "length": 144.5
@@ -103,6 +111,14 @@
             "source": "Import"
         }
     ],
+    "thicknessData": "0.25",
+    "widthData": "0.35",
+    "lengthData": "0.45",
+    "weight": "176.67 LBs",
+    "alloy": "166.67 LBs",
+    "temper": "T651",
+    "sourceData": "Domestic",
+    "part": "61P0250412",
     "measureDesc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries"
 }
 ]

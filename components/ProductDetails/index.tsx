@@ -94,28 +94,25 @@ export default function ProductDetails({id=61012050}) {
             <label htmlFor="countries" className="block mb-2 mr-3 text-sm font-medium text-black-900 dark:text-white flex items-center">Thickness(A)</label>
             <select defaultValue="0" id="countries" className="bg-gray-50 border border-black text-black text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
               <option value="0">Choose a Thickness</option>
-              <option value="US">0.25</option>
-              <option value="CA">0.50</option>
-              <option value="FR">0.75</option>
-              <option value="DE">0.85</option>
+             {
+              data.thickness.map((thickness:any )=> (
+                <option value={thickness.id}>{thickness.thick}</option>
+              ))
+             }
             </select>
           </div>
           <div className="flex items-center space-x-4 mt-4">
             <label className="block mb-2 mr-6 text-sm font-medium text-gray-900 dark:text-white flex items-center mt-2">Width(B)</label>
-
-
-            <div className="relative inline-flex items-center customInput">
-              <input type="radio" id="option1" name="radio-group" className="hidden" />
-              <label htmlFor="option1" className="cursor-pointer bg-white border border-gray-300 p-2 text-base">
-                48.5
+{
+              data.width.map((widthData:any )=> (
+                <div className="relative inline-flex items-center customInput">
+              <input type="radio" id={'option'+widthData.id} name="radio-group" className="hidden" />
+              <label htmlFor={'option'+widthData.id} className="cursor-pointer bg-white border border-gray-300 p-2 text-base">
+                {widthData.width}
               </label>
             </div>
-            <div className="relative inline-flex items-center customInput">
-              <input type="radio" id="option2" name="radio-group" className="hidden" />
-              <label htmlFor="option2" className="cursor-pointer bg-white border border-gray-300 p-2 text-base">
-                68.5
-              </label>
-            </div>
+              ))
+             }
             <div className="relative inline-flex items-center customInput">
               <input type="radio" id="option3" name="radio-group" className="hidden" />
               <label htmlFor="option3" className="cursor-pointer bg-white border border-gray-300 p-2 text-base">
@@ -125,37 +122,29 @@ export default function ProductDetails({id=61012050}) {
           </div>
           <div className="flex items-center space-x-4 mt-4">
             <label className="block mb-2 mr-4 text-sm font-medium text-gray-900 dark:text-white flex items-center mt-2">Length(C)</label>
-
-
-            <div className="relative inline-flex items-center customInput">
-              <input type="radio" id="length1" name="radio-group1" className="hidden" />
-              <label htmlFor="length1" className="cursor-pointer bg-white border border-gray-300 p-2 text-base">
-                144.5
-              </label>
-            </div>
-            <div className="relative inline-flex items-center customInput">
-              <input type="radio" id="length2" name="radio-group1" className="hidden" />
-              <label htmlFor="length2" className="cursor-pointer bg-white border border-gray-300 p-2 text-base">
-                Custom
-              </label>
-            </div>
+            {
+              data.lengths.map((lengthData:any )=> (
+                <div className="relative inline-flex items-center customInput">
+                <input type="radio" id={'source'+lengthData.id} name="radio-group1" className="hidden" />
+                <label htmlFor={'source'+lengthData.id} className="cursor-pointer bg-white border border-gray-300 p-2 text-base">
+                {lengthData.length}
+                </label>
+              </div>
+              ))
+             }
           </div>
           <div className="flex items-center space-x-4 mt-4">
             <label className="block mb-2 mr-2-3 text-sm font-medium text-gray-900 dark:text-white flex items-center mt-2 text-base">Source</label>
-
-
-            <div className="relative inline-flex items-center customInput">
-              <input type="radio" id="source1" name="source-group1" className="hidden" />
-              <label htmlFor="source1" className="cursor-pointer bg-white border border-gray-300 p-2">
-                Domestic
-              </label>
-            </div>
-            <div className="relative inline-flex items-center customInput">
-              <input type="radio" id="source2" name="source-group1" className="hidden" />
-              <label htmlFor="source2" className="cursor-pointer bg-white border border-gray-300 p-2">
-                Import
-              </label>
-            </div>
+            {
+              data.source.map((sourceData:any )=> (
+                <div className="relative inline-flex items-center customInput">
+                <input type="radio" id={sourceData.id} name="source-group1" className="hidden" />
+                <label htmlFor={sourceData.id} className="cursor-pointer bg-white border border-gray-300 p-2">
+                  {sourceData.source}
+                </label>
+              </div>
+              ))
+             }
           </div>
           <div className="hidden md:block">
             <div className="flex items-center space-x-4 mt-4 ">
@@ -193,35 +182,35 @@ export default function ProductDetails({id=61012050}) {
                       <tbody className="bg-white font-light">
                         <tr>
                           <td className="pr-6 pt-2 whitespace-nowrap border-r border-light-gray">Thickness (A)</td>
-                          <td className="px-6 pt-2  whitespace-nowrap">0.25</td>
+                          <td className="px-6 pt-2  whitespace-nowrap">{data.thicknessData}</td>
                         </tr>
                         <tr>
                           <td className="pr-6 pt-2 whitespace-nowrap border-r border-light-gray">Width (B)</td>
-                          <td className="px-6 pt-2  whitespace-nowrap">0.25</td>
+                          <td className="px-6 pt-2  whitespace-nowrap">{data.widthData}</td>
                         </tr>
                         <tr>
                           <td className="pr-6 pt-2 whitespace-nowrap border-r border-light-gray">Length (C)</td>
-                          <td className="px-6 pt-2  whitespace-nowrap">200</td>
+                          <td className="px-6 pt-2  whitespace-nowrap">{data.lengthData}</td>
                         </tr>
                         <tr>
                           <td className="pr-6 pt-2 whitespace-nowrap border-r border-light-gray">Weight (each)</td>
-                          <td className="px-6 pt-2  whitespace-nowrap">176.67 LBs</td>
+                          <td className="px-6 pt-2  whitespace-nowrap">{data.weight}</td>
                         </tr>
                         <tr>
                           <td className="pr-6 pt-2 whitespace-nowrap border-r border-light-gray">Alloy</td>
-                          <td className="px-6 pt-2  whitespace-nowrap">176.67 LBs</td>
+                          <td className="px-6 pt-2  whitespace-nowrap">{data.alloy}</td>
                         </tr>
                         <tr>
                           <td className="pr-6 pt-2 whitespace-nowrap border-r border-light-gray">Temper</td>
-                          <td className="px-6 pt-2  whitespace-nowrap">T651</td>
+                          <td className="px-6 pt-2  whitespace-nowrap">{data.temper}</td>
                         </tr>
                         <tr>
                           <td className="pr-6 pt-2 whitespace-nowrap border-r border-light-gray">Source</td>
-                          <td className="px-6 pt-2  whitespace-nowrap">Import</td>
+                          <td className="px-6 pt-2  whitespace-nowrap">{data.sourceData}</td>
                         </tr>
                         <tr>
                           <td className="pr-6 pt-2 whitespace-nowrap border-r border-light-gray">Part #</td>
-                          <td className="px-6 pt-2  whitespace-nowrap">61P0250412</td>
+                          <td className="px-6 pt-2  whitespace-nowrap">{data.part}</td>
                         </tr>
                       </tbody>
                     </table>
