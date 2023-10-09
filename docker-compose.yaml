@@ -1,0 +1,13 @@
+version: '3'
+services:
+  ims:
+    build:
+      context: ./
+#   command:
+#      docker run -p 3000:3000 ecom-sample-ims
+
+  wiremock:
+    build:
+      context: ./wiremock/
+#   command:
+#      docker run -p 3001:3001 ecom-sample-wiremock
