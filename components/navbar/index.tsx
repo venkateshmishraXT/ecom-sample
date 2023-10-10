@@ -1,8 +1,11 @@
-import React from "react";
+import { context } from "@/app/layout";
+import React, { useContext } from "react";
 
 export default function Navbar() {
+    const contextValue:any = useContext(context);
     return (
-        <nav className="bg-blue sticky md:relative top-0 left-0">
+        <>
+       {contextValue && <nav className="bg-blue sticky md:relative top-0 left-0">
             <div className="mx-auto max-w-7xl px-2 hidden md:block">
                 <div className="relative flex h-10 items-center justify-between">
                     <div className="flex flex-1 items-center justify-end">
@@ -29,7 +32,7 @@ export default function Navbar() {
                         </button>
                             <div className="block">
                                 <div className="m-3 hidden md:block">
-                                    <img src="../images/logo.png" width={298} height={50} />
+                                    <img src={contextValue.logoPathDesktop} width={298} height={50} />
                                 </div>
                             </div>
                             <div className="block pt-6 text-black hidden md:block">
@@ -40,7 +43,7 @@ export default function Navbar() {
                             </div>
                         </div>
                         <div className="row-span-3 relative flex items-center flex-col justify-between md:hidden">
-                            <img src="../images/logo-m.png" width={40} height={40} />
+                            <img src={contextValue.logoPathMobile} width={40} height={40} />
                         </div>
                         <div className="row-span-3 relative h-24 flex-col justify-between pr-3 hidden md:flex" >
                             <div className=" justify-end hidden md:flex">
@@ -82,6 +85,7 @@ export default function Navbar() {
                     </div>
                 </div>
             </div>
-        </nav>
+        </nav>}
+        </>
     )
 }

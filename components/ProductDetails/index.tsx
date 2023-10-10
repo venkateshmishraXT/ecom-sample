@@ -89,7 +89,7 @@ export default function ProductDetails({id=61012050}) {
               <option value="0">Choose a Thickness</option>
              {
               data.thickness.map((thickness:any )=> (
-                <option value={thickness.id}>{thickness.thick}</option>
+                <option key={thickness.id} value={thickness.id}>{thickness.thick}</option>
               ))
              }
             </select>
@@ -98,7 +98,7 @@ export default function ProductDetails({id=61012050}) {
             <label className="block mb-2 mr-6 text-sm font-medium text-gray-900 dark:text-white flex items-center mt-2">Width(B)</label>
 {
               data.width.map((widthData:any )=> (
-                <div className="relative inline-flex items-center customInput">
+                <div className="relative inline-flex items-center customInput" key={widthData.id}>
               <input type="radio" id={'option'+widthData.id} name="radio-group" className="hidden" />
               <label htmlFor={'option'+widthData.id} className="cursor-pointer bg-white border border-gray-300 p-2 text-base">
                 {widthData.width}
@@ -117,7 +117,7 @@ export default function ProductDetails({id=61012050}) {
             <label className="block mb-2 mr-4 text-sm font-medium text-gray-900 dark:text-white flex items-center mt-2">Length(C)</label>
             {
               data.lengths.map((lengthData:any )=> (
-                <div className="relative inline-flex items-center customInput">
+                <div className="relative inline-flex items-center customInput" key={lengthData.id}>
                 <input type="radio" id={'source'+lengthData.id} name="radio-group1" className="hidden" />
                 <label htmlFor={'source'+lengthData.id} className="cursor-pointer bg-white border border-gray-300 p-2 text-base">
                 {lengthData.length}
@@ -130,7 +130,7 @@ export default function ProductDetails({id=61012050}) {
             <label className="block mb-2 mr-2-3 text-sm font-medium text-gray-900 dark:text-white flex items-center mt-2 text-base">Source</label>
             {
               data.source.map((sourceData:any )=> (
-                <div className="relative inline-flex items-center customInput">
+                <div className="relative inline-flex items-center customInput" key={sourceData.id}>
                 <input type="radio" id={sourceData.id} name="source-group1" className="hidden" />
                 <label htmlFor={sourceData.id} className="cursor-pointer bg-white border border-gray-300 p-2">
                   {sourceData.source}
