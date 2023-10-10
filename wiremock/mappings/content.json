@@ -3,7 +3,7 @@
         {
             "request": {
                 "method": "GET",
-                "urlPath": "/content/"
+                "urlPath": "/content"
             },
             "response": {
                 "headers": {

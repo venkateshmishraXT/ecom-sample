@@ -7,6 +7,7 @@ import { ReadMore } from "../ReadMore";
 import { Spinner } from "../Skeleton";
 import { BreadCrumb } from "../BredCrumb";
 import API_BASE_URL from "@/config/api";
+import MeasureProduct from "../MeasureProduct";
 
 
 export default function ProductDetails({id=61012050}) {
@@ -52,17 +53,7 @@ export default function ProductDetails({id=61012050}) {
             <img className="w-full" alt={data.name} src={data.imagePathMobile} />
           </div>
         </div>
-        <div className="xl:w-236 mt-8 hidden md:block">
-          <div className="bg-white p-7">
-            <p className="font-semibold">How to measure</p>
-            <div className="flow-root flex">
-              <p className="float-left w-6/12 lg:w-8/12 text-sm font-normal">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the size guide.</p>
-              <p className="float-right pr-3">
-                <img className="w-full" alt="size guide" src="../images/size-guide.png" />
-              </p>
-            </div>
-          </div>
-        </div>
+        <MeasureProduct />
       </div>
       <div className="bg-white p-4 pt-0 mt-4 block md:hidden">
         <div className="flex items-center space-x-4">
