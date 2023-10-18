@@ -10,11 +10,11 @@ export default function MeasureProduct() {
     return (
         <>       {contextValue && <div className="xl:w-236 mt-8 hidden md:block">
             <div className="bg-white p-7">
-                <p className="font-semibold">{contextValue.measure.title}</p>
+                <p className="font-semibold">{contextValue.contentFields[0].contentFieldValue.data}</p>
                 <div className="flow-root flex">
-                    <p className="float-left w-6/12 lg:w-8/12 text-sm font-normal">{contextValue.measure.desc}</p>
+                    <p className="float-left w-6/12 lg:w-8/12 text-sm font-normal">{contextValue.contentFields[1].contentFieldValue.data}</p>
                     <p className="float-right pr-3">
-                        <img className="w-full" alt="size guide" src={contextValue.measure.imagePath} />
+                        <img className="w-full" alt="size guide" src={contextValue.contentFields[2].contentFieldValue.image.contentUrl} />
                     </p>
                 </div>
             </div>

@@ -7,6 +7,49 @@
             "title": "How to Measure",
             "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
             "imagePath": "../images/size-guide.png"
-        }
+        },
+        "contentFields": [
+            {
+                "contentFieldValue": {
+                    "data": "How to measure"
+                },
+                "dataType": "string",
+                "inputControl": "text",
+                "label": "Text",
+                "name": "Text43107751",
+                "nestedContentFields": [],
+                "repeatable": false
+            },
+            {
+                "contentFieldValue": {
+                    "data": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries"
+                },
+                "dataType": "string",
+                "inputControl": "text",
+                "label": "Description",
+                "name": "Text88333355",
+                "nestedContentFields": [],
+                "repeatable": false
+            },
+            {
+                "contentFieldValue": {
+                    "image": {
+                        "contentType": "Document",
+                        "contentUrl": "../images/size-guide.png",
+                        "description": "Size Guide",
+                        "encodingFormat": "image/png",
+                        "fileExtension": "png",
+                        "id": 34286,
+                        "sizeInBytes": 6047,
+                        "title": "size-guide.png"
+                    }
+                },
+                "dataType": "image",
+                "label": "Image",
+                "name": "Image35652922",
+                "nestedContentFields": [],
+                "repeatable": false
+            }
+        ]
     }
 }

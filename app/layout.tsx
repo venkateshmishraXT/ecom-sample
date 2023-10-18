@@ -22,6 +22,25 @@ export default function RootLayout({
           }
           )
   }, [])
+  // new CMS api call
+  // const url = 'https://jsonplaceholder.typicode.com/users';
+  // const authkey = 'dXNlckBsaWZlcmF5LmNvbTpOZXd1c2VyQDEwMA==';
+  // useEffect(() => {
+  //     fetch(url, {
+  //       method: 'GET',
+  //       headers: {
+  //         authorization: 'Basic ' + authkey,
+  //         'x-csrf-token': '9fd4qhxq',
+  //       }
+  //     }).then(response => response.json())
+  //       .then(json => {
+  //           setData(json)
+  //           console.log('cms data ====' + json.data);
+  //       })
+  //       .catch((error) => {
+  //         console.log(error)
+  //       });
+  // }, [])
   return (
     <html lang="en">
       <body className={inter.className}>
